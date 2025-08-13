@@ -1,0 +1,5 @@
+ERROR|04:51:17 | Heartbeat=35s | between 04:51:17 and 04:50:42 | Key TSTFEED0300|7E3E|0400
+ERROR|03:39:11 | Heartbeat=35s | between 03:39:11 and 03:38:36 | Key TSTFEED0300|7E3E|0400
+ERROR|02:27:06 | Heartbeat=36s | between 02:27:06 and 02:26:30 | Key TSTFEED0300|7E3E|0400
+WARNING|01:35:10 | Heartbeat=32s | between 01:35:10 and 01:34:38 | Key TSTFEED0300|7E3E|0400
+ERROR|01:14:58 | Heartbeat=35s | between 01:14:58 and 01:14:23 | Key TSTFEED0300|7E3E|0400
