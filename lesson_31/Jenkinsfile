@@ -28,14 +28,24 @@ pipeline {
             steps {
                 sh '''
                 source $VENV_DIR/bin/activate
-                PYTHONPATH=. pytest --junitxml=results.xml
+                PYTHONPATH=. pytest --junitxml=results.xml --alluredir=allure-results
                 '''
             }
         }
 
-        stage('Publish test results') {
+        stage('Publish JUnit results') {
             steps {
                 junit 'results.xml'
+            }
+        }
+
+        stage('Allure Report') {
+            steps {
+                allure([
+                    includeProperties: false,
+                    jdk: '',
+                    results: [[path: 'allure-results']]
+                ])
             }
         }
     }
