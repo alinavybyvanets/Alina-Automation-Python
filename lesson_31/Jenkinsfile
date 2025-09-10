@@ -5,13 +5,7 @@ pipeline {
         VENV_DIR = ".venv"
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/YourUserName/lesson_31.git'
-            }
-        }
+ 
 
         stage('Install dependencies') {
             steps {
