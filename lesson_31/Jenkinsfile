@@ -29,7 +29,11 @@ pipeline {
     post {
         always {
             junit allowEmptyResults: true, testResults: 'results.xml'
-            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            allure includeProperties: false,
+               jdk: '',
+               commandline: 'allure',
+               reportBuildPolicy: 'ALWAYS',
+               results: [[path: 'allure-results']]
             echo 'Pipeline finished. Cleaning up...'
             sh 'rm -rf ${VENV_DIR} || true'
         }
