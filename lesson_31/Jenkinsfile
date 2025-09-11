@@ -31,7 +31,7 @@ pipeline {
             junit allowEmptyResults: true, testResults: 'results.xml'
             allure includeProperties: false,
                jdk: '',
-               installationName: 'allure',
+               commandline: 'allure',
                results: [[path: 'allure-results']]
             echo 'Pipeline finished. Cleaning up...'
             sh 'rm -rf ${VENV_DIR} || true'
