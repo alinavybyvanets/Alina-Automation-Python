@@ -1,0 +1,120 @@
+# Alina Automation Python Projects
+
+This repository contains my training and practical projects from the **QA Automation Python** course.  
+The focus is on **UI automation (Selenium + POM), API testing (Requests + Pytest), Docker, PostgreSQL and Jenkins CI/CD**.
+
+> Note: Folder names like `lesson_30`, `lesson_31` etc. come from the course structure.  
+> Below you can find where the main projects are located.
+
+---
+
+## 🔹 UI Automation – Nova Poshta Tracking (Selenium + POM + Pytest)
+
+**Location:** `lesson_31/`
+
+Main parts:
+- `lesson_31/pages/` – Page Object classes (`base_page.py`, `tracking_page.py`)
+- `lesson_31/tests/` – test file `test_np_tracking.py` and `conftest.py`
+- `lesson_31/screenshot/` – screenshots of the test execution
+- `lesson_31/Jenkinsfile` – Jenkins pipeline for running tests
+- `lesson_31/requirements.txt` – dependencies
+
+Technologies:
+- Python, Selenium WebDriver
+- Pytest, Page Object Model
+- Allure (via previous lessons)
+- Jenkins, Git/GitHub
+
+---
+
+## 🔹 API Automation – Flask App + Pytest + Requests
+
+**Location:** `lesson_30/`
+
+Main parts:
+- `lesson_30/app.py` – Flask application (API under test)
+- `lesson_30/tests/test_app.py` – automated API tests
+- `lesson_30/requirements.txt` – dependencies
+- `lesson_30/Dockerfile` – Docker image for the app
+- `lesson_30/allure-results/` – generated Allure results (example of report output)
+
+Technologies:
+- Python, Flask
+- Pytest, Requests
+- Allure
+- Docker
+
+---
+
+## 🔹 Docker + PostgreSQL Testing
+
+**Location:** `lesson_29/`
+
+This lesson contains work with:
+- Dockerfile and containers
+- PostgreSQL database
+- Python scripts that connect to the database and perform CRUD operations  
+  (insert, update, delete, select).
+
+Technologies:
+- Docker
+- PostgreSQL
+- Python, Pytest / scripts for DB validation
+
+---
+
+## 🔹 Additional UI & Locator Practice
+
+**Location:** `lesson_26/`, `lesson_27/`
+
+- `lesson_26` – working with iframes, alerts and Selenium.
+- `lesson_27` – practice with **XPath** and **CSS locators** for a real web application.
+
+---
+
+## 🔹 SQL & ORM Practice
+
+**Location:** `lesson_20/`, `lesson_22/`
+
+Contains:
+- SQL tasks: table creation, inserts, JOIN queries.
+- ORM tasks with SQLAlchemy: models, CRUD operations.
+
+Technologies:
+- SQL
+- PostgreSQL
+- SQLAlchemy, Python
+
+---
+
+## 🔹 CI/CD – Jenkins Pipeline
+
+The Jenkins pipeline for running UI tests is stored in:
+
+- `lesson_31/Jenkinsfile`
+
+Pipeline stages:
+1. Checkout repository  
+2. Install dependencies  
+3. Run Pytest UI tests  
+4. Generate and publish test report (Allure)
+
+---
+
+## 🧰 Tech Stack
+
+- **Languages:** Python  
+- **Automation:** Selenium WebDriver, Pytest, Requests, Page Object Model (POM)  
+- **Reports:** Allure  
+- **Databases:** PostgreSQL, SQLAlchemy  
+- **Infrastructure:** Docker, Jenkins  
+- **Tools:** Git, GitHub, Chrome DevTools
+
+---
+
+## 👩‍💻 About Me
+
+**Alina Vybyvanets – Junior QA Automation Engineer (Python)**
+
+During the QA Automation Python course I completed all homeworks (33/33)  
+and built multiple UI, API, and backend tests demonstrating real automation skills.
