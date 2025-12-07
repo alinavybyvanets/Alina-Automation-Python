@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    environment {
+        VENV_DIR = ".venv"
+    }
+    stages {
+    
+        stage('Install dependencies') {
+            steps {
+                sh '''
+                python3 -m venv ${VENV_DIR}
+                . ${VENV_DIR}/bin/activate
+                pip install --upgrade pip
+                pip install -r lesson_31/requirements.txt
+                '''
+            }
+        }
+
+        stage('Run tests') {
+            steps {
+                sh '''
+                . ${VENV_DIR}/bin/activate
+                PYTHONPATH=lesson_31 pytest lesson_31/tests --junitxml=results.xml --alluredir=allure-results
+                '''
+            }
+        }
+    }
+    post {
+        always {
+            junit allowEmptyResults: true, testResults: 'results.xml'
+            allure includeProperties: false,
+               jdk: '',
+               commandline: 'allure',
+               results: [[path: 'allure-results']]
+            echo 'Pipeline finished. Cleaning up...'
+            sh 'rm -rf ${VENV_DIR} || true'
+        }
+        success {
+            mail to: 'alinavybivanec@gmail.com',
+                 subject: "✅ SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                 body: "Good news! The build succeeded. Check details: ${env.BUILD_URL}"
+        }
+        failure {
+            mail to: 'alinavybivanec@gmail.com',
+                 subject: "❌ FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                 body: "Build failed! See logs: ${env.BUILD_URL}"
+        }
+    }
+}
